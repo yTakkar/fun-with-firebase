@@ -1,5 +1,5 @@
-import { storageRef } from "../config/storage";
-import { addToDatabase } from '../config/db';
+import { storageRef } from "../firebase/storage";
+import { addToDatabase } from '../firebase/db';
 
 export const uploadFile = file => (progressFn, successFn) => {
   const filePath = `uploads/${file.name}`

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { getProverbs } from '../config/store';
+import { getProverbs } from '../firebase/store';
 import Proverb from '../components/Proverb'
 import { resolvePromise } from '../helpers';
 

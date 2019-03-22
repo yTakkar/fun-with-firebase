@@ -1,6 +1,6 @@
 import firebase from 'firebase/app'
 import 'firebase/firestore'
-import './initFirebase'
+import './init'
 
 export const store = firebase.firestore()
 export const proverbsCol = store.collection('proverbs')

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { addProverb } from '../config/store';
+import { addProverb } from '../firebase/store';
 import { resolvePromise } from '../helpers'
 
 export default props => {

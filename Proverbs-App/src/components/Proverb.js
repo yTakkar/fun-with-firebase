@@ -1,6 +1,6 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
-import { deleteProverb } from '../config/store'
+import { deleteProverb } from '../firebase/store'
 import { resolvePromise } from '../helpers';
 
 const Proverb = props => {

@@ -1,6 +1,6 @@
 import firebase from 'firebase/app'
 import 'firebase/storage'
-import './initFirebase'
+import './init'
 
 export const storageRef = firebase.storage().ref()
 

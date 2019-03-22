@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { getFiles } from '../config/db';
-import { getFileSourceFromStorage } from '../config/storage';
+import { getFiles } from '../firebase/db';
+import { getFileSourceFromStorage } from '../firebase/storage';
 
 export default props => {
   const [images, setImages] = useState([])
