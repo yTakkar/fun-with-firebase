@@ -28,7 +28,7 @@ This repo showcases some projects created keeping Firebase in mind as a replacem
 
 ## Development
 - Open any one of the project.
-- Create an `.env`. Populate it with Firebase init options. [For more clearity, goto `firebase/init.js` file.]
+- Create an `.env`. Populate it with Firebase init options. [For more clearity, goto `<PROJECT>/src/firebase/init.js` file.]
 - Run `yarn start`
 
 This project was a challenge I gave myself to complete it in 2 days. And I completed :).
