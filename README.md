@@ -21,7 +21,7 @@ This repo showcases some projects created keeping Firebase in mind as a replacem
 - Provides `Register`, `Login` and `Logout` features to a user.
 - Once loggedIn, user can manage his notes.
 - [View project](https://github.com/yTakkar/fun-with-firebase/tree/master/Personal-Notes-App)
-- [Demo](https://firebase-personal-notes-app.surge.sh/)
+- [Demo](https://firebase-personal-notes-app.now.sh)
 
 **[...More to come]**
 
