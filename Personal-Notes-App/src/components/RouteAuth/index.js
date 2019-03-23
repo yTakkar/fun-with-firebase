@@ -14,7 +14,7 @@ const RouteAuth = props => {
     setAuthStatus(userAuth)
   }, [userAuth])
 
-  if (!authApiStatus) return <Loader/>
+  if (!authApiStatus || authStatus === null) return <Loader/>
 
   switch(type) {
     case ROUTE_LEVEL.PRIVATE:

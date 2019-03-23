@@ -1,7 +1,7 @@
 import types from '../action_types'
 
 const initialState = {
-  authStatus: false,
+  authStatus: null,
   authApiStatus: false
 }
 
