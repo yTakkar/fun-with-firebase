@@ -4,7 +4,9 @@ const initialState = {
   name: '',
   city: '',
   bio: '',
-  age: null
+  age: null,
+  premium: null,
+  apiStatus: null
 }
 
 const Auth = (state = initialState, action) => {
@@ -12,7 +14,11 @@ const Auth = (state = initialState, action) => {
   
   switch(type) {
     case types.UPDATE_USER_DATA:
-      return { ...state, ...payload }
+      return { ...state, ...payload, apiStatus: true}
+
+    case types.RESET_USER_DATA:   
+      return initialState
+
     default:
       return state
   }

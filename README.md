@@ -20,6 +20,7 @@ This repo showcases some projects created keeping Firebase in mind as a replacem
 - Integrated with `redux` store.
 - Provides `Register`, `Login` and `Logout` features to a user.
 - Once loggedIn, user can manage his notes.
+- Premium membership feature (with cloud functions).
 - [View project](https://github.com/yTakkar/fun-with-firebase/tree/master/Personal-Notes-App)
 - [Demo](https://firebase-personal-notes-app.surge.sh)
 

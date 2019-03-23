@@ -4,9 +4,9 @@ import thunk from 'redux-thunk'
 import auth from '../reducers/auth'
 import user from '../reducers/user'
 
-import logger from '../middlewares/logger'
+// import logger from '../middlewares/logger'
 
-const middlwares = applyMiddleware(thunk, logger)
+const middlwares = applyMiddleware(thunk)
 const reduxDevtools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 
 const enhancers = compose(middlwares, reduxDevtools)

@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { Route } from 'react-router-dom'
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
-import Loader from '../Loader';
+import FullPageLoader from '../FullPageLoader';
 
 const RouteAuth = props => {
   const { type, userAuth, authApiStatus, ...rest } = props
@@ -14,7 +14,7 @@ const RouteAuth = props => {
     setAuthStatus(userAuth)
   }, [userAuth])
 
-  if (!authApiStatus || authStatus === null) return <Loader/>
+  if (!authApiStatus || authStatus === null) return <FullPageLoader/>
 
   switch(type) {
     case ROUTE_LEVEL.PRIVATE:
