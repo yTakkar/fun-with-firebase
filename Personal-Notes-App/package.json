@@ -16,8 +16,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "now-build": "react-scripts build",
-    "deploy": "now --target production"
+    "rename": "mv ./build/index.html ./build/200.html",
+    "deploy": "yarn rename && surge -p build -d https://firebase-personal-notes-app.surge.sh"
   },
   "eslintConfig": {
     "extends": "react-app"
