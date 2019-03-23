@@ -2,9 +2,6 @@
 
 This repo showcases some projects created keeping Firebase in mind as a replacement for a backend server.
 
-This project was a challenge I gave myself to complete it in 2 days.
-
-
 ### Album-App
 - Upload files with a progressbar and view all your uploaded files in realtime.
 - Uses `Storage` and `Firestore`
