@@ -16,7 +16,7 @@ export default props => {
       <h4>All uploaded files</h4>
       {
         !images.length 
-          ? <h5>No Images Found!!</h5>
+          ? <h5>No Files Found!!</h5>
           : images.map(img => 
             <img key={img} src={img} alt={img}  style={{ maxWidth: 300 }} />
           )
