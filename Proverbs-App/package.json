@@ -14,7 +14,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "rename": "mv ./build/index.html ./build/200.html",
-    "deploy": "yarn rename && surge -p build -d https://firebase-proverbs-app.surge.sh"
+    "deploy": "yarn build && yarn rename && surge -p build -d https://firebase-proverbs-app.surge.sh"
   },
   "eslintConfig": {
     "extends": "react-app"
