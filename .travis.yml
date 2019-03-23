@@ -10,5 +10,11 @@ script:
   - cd ./Album-App
   - yarn
   - yarn build
-  - yarn test
-  - yarn deploy
+  - yarn rename
+
+  # Deploy to surge
+deploy:
+  provider: surge
+  project: Album-App/build
+  domain: https://firebase-album-app.surge.sh
+  
