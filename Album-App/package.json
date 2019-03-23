@@ -13,7 +13,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "surge -p build -d https://firebase-album-app.surge.sh"
+    "rename": "mv ./build/index.html ./build/200.html",
+    "deploy": "yarn rename && surge -p build -d https://firebase-album-app.surge.sh"
   },
   "eslintConfig": {
     "extends": "react-app"
