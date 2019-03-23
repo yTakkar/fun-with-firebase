@@ -1,8 +1,14 @@
 language: node_js
 node_js: "stable"
 
+cache:
+  yarn: true
+  directories: 
+  - Album-App/node_modules
+
 script:
   - cd ./Album-App
   - yarn
   - yarn build
   - yarn test
+  - yarn deploy
