@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 import { registerUser } from '../firebase/auth';
 import { addUserInfo } from '../firebase/store/users';
+import { sendPageView } from '../analytics';
+import { ANALYTICS_PAGES } from "../constants";
+import routes from '../routes';
+import useOnMount from '../hooks/useOnMount';
 
 const Register = props => {
   const [email, setEmail] = useState('')
@@ -9,6 +13,10 @@ const Register = props => {
   const [city, setCity] = useState('')
   const [error, setError] = useState('')
   const [password, setPassword] = useState('')
+
+  useOnMount(() => {
+    sendPageView({ page: routes.register, title: ANALYTICS_PAGES.REGISTER })
+  })
 
   const register = () => {
     registerUser(email, password)

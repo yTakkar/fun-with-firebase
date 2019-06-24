@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import store from './store'
+import routes from './routes'
 
 import PreLoginHeader from './components/Header/PreLoginHeader'
 import PostLoginHeader from './components/Header/PostLoginHeader'
@@ -23,18 +24,18 @@ const App = props => {
       <Router>
         <Container>
           <Switch>
-            <RouteAuth type={ROUTE_LEVEL.PUBLIC} path='/login' component={PreLoginHeader} />
-            <RouteAuth type={ROUTE_LEVEL.PUBLIC} path='/register' component={PreLoginHeader} />
+            <RouteAuth type={ROUTE_LEVEL.PUBLIC} path={routes.login} component={PreLoginHeader} />
+            <RouteAuth type={ROUTE_LEVEL.PUBLIC} path={routes.register} component={PreLoginHeader} />
             <RouteAuth component={PostLoginHeader} />
           </Switch>
           
           <Switch>
             <RouteAuth type={ROUTE_LEVEL.PRIVATE} path='/' exact component={Home} />
-            <RouteAuth type={ROUTE_LEVEL.PRIVATE} path='/account' component={Account} />
-            <RouteAuth type={ROUTE_LEVEL.PRIVATE} path='/add-note' component={AddNote} />
-            <RouteAuth type={ROUTE_LEVEL.PRIVATE} path='/update-note/:id' component={UpdateNote} />
-            <RouteAuth type={ROUTE_LEVEL.PUBLIC} path='/login' component={Login} />
-            <RouteAuth type={ROUTE_LEVEL.PUBLIC} path='/register' component={Register} />
+            <RouteAuth type={ROUTE_LEVEL.PRIVATE} path={routes.account} component={Account} />
+            <RouteAuth type={ROUTE_LEVEL.PRIVATE} path={routes.addNote} component={AddNote} />
+            <RouteAuth type={ROUTE_LEVEL.PRIVATE} path={`${routes.updateNote}/:id`} component={UpdateNote} />
+            <RouteAuth type={ROUTE_LEVEL.PUBLIC} path={routes.login} component={Login} />
+            <RouteAuth type={ROUTE_LEVEL.PUBLIC} path={routes.register} component={Register} />
           </Switch>
         </Container>
       </Router>

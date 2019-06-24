@@ -8,12 +8,17 @@ import { resolvePromise } from '../../helpers'
 import types from '../../action_types'
 import { connect } from 'react-redux'
 import WithoutFlicker from '../ResolveFlicker';
+import { sendEvent } from '../../analytics';
+import { ANALYTICS_EVENTS } from '../../constants';
 
 const PostLoginHeader = props => {
 
   const logout = e => {
     e.preventDefault()
-    resolvePromise(logOutUser)(() => props.dispatch({ type: types.RESET_USER_DATA }))
+    resolvePromise(logOutUser)(() => {
+      sendEvent({ action: ANALYTICS_EVENTS.LOGOUT_CLICKED })
+      props.dispatch({ type: types.RESET_USER_DATA })
+    })
   }
 
   const togglePremium = (promise, payload) => e => {

@@ -1,6 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { getNote, updateNote } from '../firebase/store/notes';
 import { resolvePromise } from '../helpers';
+import { sendPageView } from '../analytics';
+import { ANALYTICS_PAGES } from "../constants";
+import routes from '../routes'
+import useOnMount from '../hooks/useOnMount';
 
 const UpdateNote = props => {
   const { match, history } = props
@@ -16,9 +20,10 @@ const UpdateNote = props => {
     setNote({ ...note, [key]: e.target.value })
   }
 
-  useEffect(() => {
+  useOnMount(() => {
+    sendPageView({ title: ANALYTICS_PAGES.UPDATE_NOTE, page: routes.updateNote })
     resolvePromise(getNote, id)(setNote)
-  }, [])
+  })
 
   const update = () => {
     resolvePromise(updateNote(id), { title, content })(() => history.push('/'))

@@ -1,15 +1,20 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { getNotes } from '../firebase/store/notes';
 import Note from '../components/Note'
 import { resolvePromise } from '../helpers';
+import { sendPageView } from '../analytics';
+import { ANALYTICS_PAGES } from "../constants";
+import routes from '../routes';
+import useOnMount from '../hooks/useOnMount';
 
 const Home = props => {
   const { history } = props
   const [notes, setNotes] = useState([])
 
-  useEffect(() => {
+  useOnMount(() => {
+    sendPageView({ page: routes.main, title: ANALYTICS_PAGES.MAIN })
     resolvePromise(getNotes)(setNotes)
-  }, [])
+  })
 
   const removeFromState = id => {
     const updatedProverbs = notes.filter(p => p.id !== id)

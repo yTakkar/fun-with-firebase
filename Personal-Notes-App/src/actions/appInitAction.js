@@ -1,6 +1,7 @@
 import {  auth } from "../firebase/auth";
 import types from '../action_types'
 import { getUserInfo } from "../firebase/store/users";
+import { setUserID } from "../analytics";
 
 export default () => (dispatch, getState) => {
   const init = () => {
@@ -8,6 +9,8 @@ export default () => (dispatch, getState) => {
       console.log(user)
       if (user) {
         dispatch({ type: types.UPDATE_AUTH_STATUS, payload: true })
+
+        setUserID(user)
 
         const result = await user.getIdTokenResult(true)
         const { claims } = result || {}

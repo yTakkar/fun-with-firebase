@@ -1,9 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import withApiStatus from '../HOC/withApiStatus';
+import { sendPageView } from '../analytics';
+import { ANALYTICS_PAGES } from "../constants";
+import routes from '../routes'
+import useOnMount from '../hooks/useOnMount';
 
 const Account = props => {
   const { name, age, email, city, premium } = props
+
+  useOnMount(() => {
+    sendPageView({ page: routes.account, title: ANALYTICS_PAGES.ACCOUNT })
+  })
 
   return (
     <div>
