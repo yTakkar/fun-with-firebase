@@ -28,6 +28,6 @@
   "devDependencies": {
     "@firebase/app-types": "^0.3.6",
     "firebase": "^5.9.0",
-    "nanoid": "^2.0.1"
+    "nanoid": "^3.1.31"
   }
 }
